@@ -33,7 +33,7 @@ router.get("/register", (req,res) => {
  
 router.post("/registered", (req,res) => { 
   res.send(req.body) 
-
+});
 
 
 
