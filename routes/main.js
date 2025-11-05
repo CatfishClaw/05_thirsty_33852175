@@ -7,11 +7,10 @@ const express = require("express");
 const router = express.Router();
 
 // Handle the main routes
-
-
 router.get('/search_result', function (req, res) {
     // TODO: search in the database
-    res.send(req.query);
+    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
+
  });
 
 
@@ -27,6 +26,14 @@ router.get("/about", (req, res) => {
 router.get("/search", (req, res) => {
     res.render("search.ejs", shopData)
 });
+
+router.get("/register", (req,res) => {
+    res.render("register.ejs",  shopData); 
+}); 
+ 
+router.post("/registered", (req,res) => { 
+  res.send(req.body) 
+
 
 
 
