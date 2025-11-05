@@ -9,6 +9,13 @@ const router = express.Router();
 // Handle the main routes
 
 
+router.get('/search_result', function (req, res) {
+    // TODO: search in the database
+    res.send(req.query);
+ });
+
+
+
 router.get("/", (req, res) => {
     res.render("index.ejs", shopData)
 }); 
@@ -20,6 +27,8 @@ router.get("/about", (req, res) => {
 router.get("/search", (req, res) => {
     res.render("search.ejs", shopData)
 });
+
+
 
 
 
